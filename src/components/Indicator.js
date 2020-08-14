@@ -2,10 +2,6 @@ import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 
 function Indicator({ imcValue, classification, colorClassification }) {
-  // const colorClassification = '#2ecc71'
-  // const imcValue = 20.0
-  // const classification = 'Normal'
-
   return (
     <View style={[styles.indicator, { borderColor: colorClassification }]}>
       <Text style={[styles.imcValue, { color: colorClassification }]}>
