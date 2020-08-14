@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 import Slider from '@react-native-community/slider';
+import Indicator from './components/Indicator';
 
 // Main component
 // Componente princípal
@@ -36,14 +37,21 @@ function Calculator() {
 
   return (
     <View style={styles.container}>
-      <View style={[styles.indicator, {borderColor: colorClassification}]}>
+      {/* <View style={[styles.indicator, {borderColor: colorClassification}]}>
         <Text style={[styles.imcValue, {color: colorClassification}]}>
           {imcValue.toFixed(1)}
         </Text>
         <Text style={[styles.classification, {color: colorClassification}]}>
           {classification}
         </Text>
-      </View>
+      </View> */}
+
+      <Indicator
+        imcValue={imcValue}
+        classification={classification}
+        colorClassification={colorClassification}
+      />
+
       <View style={styles.inputBlock}>
 
         <View style={styles.inputContainer}>
@@ -101,22 +109,22 @@ const styles = StyleSheet.create({
     padding: 40
   },
 
-  indicator:{
-    width: 200,
-    height: 200,
-    borderRadius: 100,
-    borderWidth: 5,
-    alignItems: 'center',
-    justifyContent: 'center'
-  },
+  // indicator:{
+  //   width: 200,
+  //   height: 200,
+  //   borderRadius: 100,
+  //   borderWidth: 5,
+  //   alignItems: 'center',
+  //   justifyContent: 'center'
+  // },
 
-  imcValue:{
-    fontSize: 60,
-  },
+  // imcValue:{
+  //   fontSize: 60,
+  // },
 
-  classification: {
-    fontSize: 20,
-  },
+  // classification: {
+  //   fontSize: 20,
+  // },
 
   inputBlock: {
     width: '100%',
